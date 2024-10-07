@@ -1,0 +1,1037 @@
+<html><head>
+     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Formulario de CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Lato&family=Open+Sans&family=Merriweather&family=Montserrat&family=Playfair+Display&family=Poppins&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+ <!-- HTML -->
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">    
+<!-- Font Awesome  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="icon" href="https://img.icons8.com/office/40/form.png" type="image/png">
+</head>
+
+     
+<style>
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: #FFF;
+    line-height: 1.2;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+    font-size: 14px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);    
+  }
+    h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+       width: 100%;
+        font-size: 16px;
+  }
+     
+    select {
+    font-family: 'Raleway', sans-serif;     
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+    font-size: 16px;         
+  }     
+     
+         textarea {
+        font-family: 'Raleway', sans-serif;     
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+        min-height: 200px;
+        font-size: 16px;
+  }    
+     
+  #photoPreview {
+    width: 0px;
+    height: 0px;
+  }
+  .skill-container, .language-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  .skill-item, .language-item {
+    background: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  .remove-btn {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+  button {
+       background-color: #3f51b5;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 10px;
+        width: 100%;
+  }
+      button:hover {
+      background-color: #ee2b34;
+      color: white;      
+    }  
+     
+       .icon-margin {
+    margin-left: 14px; /* Ajusta el valor según lo necesites */
+  }
+     
+/*---------------------MEDIA-----------------------*/     
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+    form {
+      padding: 12px;
+    }
+    label {
+      font-size: 16px;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
+      font-size: 16px;
+      padding: 8px;
+    }
+  
+#photoPreview {
+    width: 0px;
+    height: 0px;
+    opacity: 0;	
+  }
+	  
+       select {
+      width: 100%;
+      height: auto;      
+      font-size: 16px;
+      padding: 8px;
+    }      
+        textarea {
+        font-family: 'Raleway', sans-serif;     
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+        min-height: 200px;
+        font-size: 16px;
+  }   
+       
+    button {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 8px;    
+    }
+      button:hover {
+      background-color: #ee2b34;
+      color: white;      
+    }  
+    .skill-item, .language-item {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+  
+ /*----------------------Elminar Efecto de Focus------------------*/
+
+/* Eliminar el borde de enfoque (no recomendado para accesibilidad) */
+button:focus, select:focus, input:focus, textarea:focus, a:focus {
+    outline: none;
+}    
+     
+     .inicio{
+        color: #2b2b2b;
+        padding: 6px px;
+        margin-bottom: 20px;
+     }     
+     
+button.sendbtn {
+     height: 45px;
+     margin-top: 24px;
+     background: linear-gradient(to right, #3eb14a, #24b03a);
+}  
+     
+     button.sendbtn:hover {
+     background: linear-gradient(to right, #3bb547, #118d24);
+}
+     
+     .inicio {
+    background: linear-gradient(135deg, #3f51b5, #1f308e); 
+    color: #fff; /* Color del texto */
+    padding: 20px; /* Espaciado interior */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center; /* Alinear texto al centro */
+}
+
+.inicio h1 {
+    color: #fff; 
+    font-size: 2.5em; /* Tamaño del título */
+    margin: 0; /* Eliminar márgenes */
+}
+
+.inicio h2 {
+    font-size: 1.8em; /* Tamaño del subtítulo */
+    margin: 10px 0; /* Márgenes superior e inferior */
+}
+
+.inicio p {
+    font-size: 1em; /* Tamaño del párrafo */
+    margin: 5px 0; /* Márgenes superior e inferior */
+}
+
+
+button.remove-btn {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.skill-container, .language-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}  
+
+.language-item {
+    margin: 2px 7px;
+padding: 0px 24px;
+}
+
+ /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.01);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%; /* Cambia el tamaño a 90% para pantallas móviles */
+            max-width: 600px; /* Limita el ancho en pantallas grandes */
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Ajustes para pantallas móviles */
+        @media only screen and (max-width: 620px) {
+            .btn {
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+
+            .modal-content {
+                margin: 20% auto; /* Aumenta el margen superior para mejorar la vista en móviles */
+                padding: 15px;
+            }
+
+            .close {
+                font-size: 24px;
+            }
+        }
+
+@media only screen and (max-width: 620px) {
+    .btn {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+}
+       
+
+.footer {
+    background-color: #3d3d3d;
+    border-top: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 600px;
+    
+    margin: 0 auto;
+    color: #e8e8e8;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: inline-block;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    padding: 6px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.footer-links a:hover {
+    background-color: #f0f0f0;
+}
+
+</style>
+<head>
+<body>
+<div class="inicio">
+    <h1>Formulario de Datos</h1>
+    <h2>Indicaciones</h2>
+    <p>Completa con tus datos en los campos correspondientes.</p>
+    <p>Ningún campo es obligatorio. 
+        ej. si tú no tienes LinkedIn: puedes dejar el campo en blanco.</p>
+</div>
+
+
+
+<button type="button" id="clearFormButton" onclick="clearForm()">Limpiar Formulario
+  <i class="fas fa-broom icon-margin"></i> 
+</button>
+  <form id="cvForm">
+        <label for="fullName">Nombre Completo:</label>
+    <input type="text" id="fullName" name="fullName" required>
+    
+    <label for="age">Edad:</label>
+    <input type="number" id="age" name="age" min="0" max="120">
+    
+    <label for="idDocument">Documento de Identidad:</label>
+    <input type="text" id="idDocument" name="idDocument">
+    
+    <label for="photo" style="display: none;">Fotografía:</label>
+    <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+    <button type="button" id="clearPhoto" style="display: none;">Limpiar Foto</button>
+    <div id="photoPreview" style="margin-top: 10px; display: none;"></div>
+    
+    <label for="jobTitle">Título Profesional:</label>
+    <input type="text" id="jobTitle" name="jobTitle" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="phone">Teléfono:</label>
+    <input type="tel" id="phone" name="phone" required>
+    
+    <label for="address">Dirección:</label>
+    <input type="text" id="address" name="address" required>
+    
+    <label for="linkedIn">LinkedIn:</label>
+    <input type="text" id="linkedIn" name="linkedIn">
+    
+    <label for="summary">Resumen Profesional:</label>
+    <textarea id="summary" name="summary" rows="4"></textarea>
+    
+    <h3>Experiencia Laboral</h3>
+    <div id="experienceContainer"></div>
+   <button type="button" onclick="addExperience()"> Agregar Experiencia
+  <i class="fas fa-plus icon-margin"></i>
+</button>    
+    <h3>Educación</h3>
+    <div id="educationContainer"></div>
+    <button type="button" onclick="addEducation()"> Agregar Educación
+  <i class="fas fa-graduation-cap icon-margin"></i> 
+</button>
+    
+    <h3>Habilidades Técnicas</h3>
+    <input type="text" id="skillInput" placeholder="Agregar habilidad">
+       
+    <button type="button" onclick="addSkill()"> Agregar Habilidad
+  <i class="fas fa-plus icon-margin"></i> 
+</button>
+       
+    <div id="skillContainer" class="skill-container"></div>
+    <div>
+      <input type="checkbox" id="pageBreakSkills" name="pageBreakSkills" style="display: none;">
+      <label for="pageBreakSkills" style="display: none;">Insertar salto de página después de habilidades técnicas</label>
+    </div>
+    
+    <h3>Habilidades Personales</h3>
+    <textarea id="personalSkills" name="personalSkills" rows="3"></textarea>
+    <div>
+      <input type="checkbox" id="pageBreakPersonalSkills" name="pageBreakPersonalSkills" style="display: none;">
+      <label for="pageBreakPersonalSkills" style="display: none;">Insertar salto de página después de habilidades personales</label>
+    </div>
+    
+    <h3>Idiomas</h3>
+    <input type="text" id="languageInput" placeholder="Idioma">
+    <select id="languageLevel">
+      <option value="Básico">Básico</option>
+      <option value="Intermedio">Intermedio</option>
+      <option value="Avanzado">Avanzado</option>
+      <option value="Nativo">Nativo</option>
+      <option value="A2-B1: Pre-intermedio.">A2-B1: Pre-intermedio.</option>
+      <option value="B1: Intermedio.">B1: Intermedio.</option>
+      <option value="B2: Intermedio-Alto.">B2: Intermedio-Alto.</option>
+      <option value="C1-C2: Avanzado.">C1-C2: Avanzado.</option>
+
+    </select>
+       
+    <button type="button" onclick="addLanguage()">Agregar Idioma
+  <i class="fas fa-plus icon-margin"></i> 
+</button>
+    
+       <div id="languageContainer" class="language-container"></div>
+    <div>
+      <input type="checkbox" id="pageBreakLanguages" name="pageBreakLanguages" style="display: none;">
+      <label for="pageBreakLanguages" style="display: none;">Insertar salto de página después de idiomas</label>
+    </div>
+    
+    <h3>Certificaciones y Cursos</h3>
+    <textarea id="certifications" name="certifications" rows="3"></textarea>
+    
+    <h3>Referencias Personales</h3>
+    <textarea id="references" name="references" rows="3"></textarea>
+    
+
+
+    <label for="templateSelect">Seleccionar plantilla:</label>
+    <select id="templateSelect">
+      <option value="default">Plantilla Predeterminada</option>
+      <option value="modern">Plantilla Moderna</option>
+    </select>
+    
+     <div>
+      <h2>Indicaciones adicionales</h2>
+         <p>Debes enviar tu fotografía si necesitas que sea incluida.</p>
+         <p>Puedes realizar el pago fácilmente usando TigoMoney o Chivo Wallet.</p>
+         <p>Una vez que tengamos toda la información, recibirás tu entrega en un máximo de 15 minutos </p>
+
+<p>Con el envío de este formulario, usted reconoce haber leído, comprendido y aceptado los términos del Acuerdo de Confidencialidad y Protección de Datos Personales, consintiendo su cumplimiento.</p>
+</br>
+
+    </div>
+       
+       <!-- Botón para mostrar el modal -->
+<button id="confidentialityBtn" class="btn">Ver Acuerdo de Confidencialidad</button>
+       
+    <div>
+      <button type="button" class="sendbtn" onclick="shareViaWhatsApp()">Enviar
+  <i class="fab fa-whatsapp icon-margin"></i> 
+</button>
+
+<button id="share-email-btn" class="btn-email">
+Enviar por Email   <i class="fas fa-envelope"></i> 
+</button>
+
+    </div>
+     
+</form>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 CV Masters. All rights reserved.</p>
+        <ul class="footer-links" style="display: none;">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+   <!-- Modal -->
+    <div id="confidentialityModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Acuerdo de Confidencialidad y Protección de Datos Personales</h2>
+            <p>Entre: CV Master, en adelante "La empresa" y El Usuario</p>.
+                 <h3>1. Definiciones</h3>
+                 <p>Para efectos de este acuerdo, se entenderá por:</p>
+                 <p>- El Usuario: El titular de los datos personales.</p>
+
+                 <p>- Datos Personales: Toda información relativa a una persona física identificada o identificable, como nombre, dirección, correo electrónico, historial laboral, formación académica, etc.</p>
+ <p>- La empresa: CV Masters</p>
+ <p>- Confidencialidad: Obligación de mantener en reserva y no divulgar la información protegida sin el consentimiento expreso del titular.</p>
+                  <h3>2. Objeto del Acuerdo</h3>
+                <p>El presente acuerdo tiene como finalidad proteger la confidencialidad de los datos personales proporcionados por El Usuario a través de este formulario para la creación del documento denominado "curriculum vitae".</p>
+<p>Aclarar que los datos serán utilizados única y exclusivamente para este fin.</p>
+<h3>Temporalidad y No Almacenamiento:</h3>
+<p>CV Masters, se compromete a no almacenar los datos proporcionados en ninguna base de datos.</p> 
+<p>Los datos son gestionados de manera temporal durante el proceso de creación del documento y serán eliminados inmediatamente después de finalizada la transacción, entendida esta como la entrega del curriculum vitae al Usuario.</p>
+<h3>Obligaciones del la Empresa</h3>
+<p>CV Master se compromete a:</p>
+<p>Mantener la confidencialidad de los datos personales proporcionados por El Usuario mientras estén siendo procesados.</p>
+<p>Implementar medidas de seguridad adecuadas para proteger la información durante su procesamiento.</p>
+<p>No almacenar los datos personales en ninguna base de datos ni otros sistemas de almacenamiento, de manera permanente o temporal, más allá del tiempo estrictamente necesario para la creación del curriculum vitae.</p>
+<p>Eliminar los datos personales de forma inmediata una vez finalizada la transacción.</p>
+<h3>4. Obligaciones del Usuario</h3>
+<p>El Usuario declara que toda la información proporcionada es veraz y exacta, y se compromete a eximir a la Empresa de cualquier responsabilidad derivada del uso de información falsa o incorrecta que pueda generar errores, malentendidos o posibles infracciones legales, incluyendo delitos relacionados con la falsedad material o ideológica de los datos proporcionados.</p>
+<h3>5. Duración y Terminación</h3>
+<p>Este acuerdo entrará en vigor desde el momento en que El Usuario registre sus datos en el formulario y permanecerá vigente únicamente durante el tiempo necesario para completar el proceso de creación del curriculum vitae.</p>
+<p>La transacción se considerará terminada una vez El Usuario reciba el documento final.</p> 
+<p>Después de la finalización, los datos personales serán eliminados inmediatamente y de manera definitiva.</p>
+<h3>6. Derechos de El Usuario</h3>
+<p>El Usuario tiene derecho a:</p>
+<p>Acceder, rectificar o cancelar los datos proporcionados durante el proceso, siempre y cuando la transacción no haya finalizado.</p>
+<p>Solicitar aclaraciones o detalles sobre el manejo temporal de sus datos mientras la transacción está en curso.</p>
+<h3>7. Disposiciones Finales</h3>
+<p>En caso de que alguna de las disposiciones de este acuerdo sea considerada nula o inválida, las demás disposiciones seguirán en pleno vigor y efecto.</p>
+<p>Este acuerdo se rige por las leyes de la Republica de El Salvador y cualquier conflicto derivado de este será resuelto en los tribunales de San Salvador.</p>
+
+        </div>
+    </div>
+
+
+
+
+
+<script>
+
+function isFieldEmpty(value) {
+  return value === null || value === undefined || value.trim() === '';
+}
+
+let experiences = [];
+let educations = [];
+let skills = [];
+let languages = [];
+
+function saveToLocalStorage(key, value) {
+  console.log(`Guardando en localStorage: key = ${key}, value = ${value}`);
+  localStorage.setItem(key, value);
+  showNotification('Cambios guardados');
+}
+
+function showNotification(message, type = 'success') {
+  const notification = document.createElement('div');
+  notification.textContent = message;
+  notification.style.position = 'fixed';
+  notification.style.top = '10px';
+  notification.style.right = '10px';
+  notification.style.backgroundColor = type === 'success' ? '#3f51b5' : '#f44336';
+  notification.style.color = 'white';
+  notification.style.padding = '10px';
+  notification.style.borderRadius = '5px';
+  notification.style.zIndex = '1000';
+  document.body.appendChild(notification);
+  setTimeout(() => {
+    notification.remove();
+  }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('Página cargada, recuperando datos de localStorage');
+
+  // Cargar valores guardados de inputs, textareas y selects
+  document.querySelectorAll('input:not([type="file"]), textarea, select').forEach(element => {
+    const savedValue = localStorage.getItem(element.id || element.name);
+    console.log(`Revisando el campo ${element.id || element.name}: valor guardado = ${savedValue}`);
+    
+    if (savedValue) {
+      element.value = savedValue;
+      console.log(`Cargando valor guardado en ${element.id || element.name}: ${savedValue}`);
+    }
+    
+    element.addEventListener('change', function () {
+      console.log(`Campo cambiado: ${this.id || this.name} = ${this.value}`);
+      saveToLocalStorage(this.id || this.name, this.value);
+    });
+  });
+
+  // Cargar foto si existe
+  const savedPhoto = localStorage.getItem('photo');
+  if (savedPhoto) {
+    console.log('Cargando foto guardada');
+    const img = document.createElement('img');
+    img.src = savedPhoto;
+    document.getElementById('photoPreview').appendChild(img);
+  } else {
+    console.log('No hay foto guardada');
+  }
+
+  // Cargar listas como experiences, educations, skills y languages
+  if (localStorage.getItem('experiences')) {
+    experiences = JSON.parse(localStorage.getItem('experiences'));
+    console.log('Cargando experiencias guardadas:', experiences);
+    renderExperiences();
+  } else {
+    console.log('No hay experiencias guardadas');
+  }
+
+  if (localStorage.getItem('educations')) {
+    educations = JSON.parse(localStorage.getItem('educations'));
+    console.log('Cargando educaciones guardadas:', educations);
+    renderEducations();
+  } else {
+    console.log('No hay educaciones guardadas');
+  }
+
+  if (localStorage.getItem('skills')) {
+    skills = JSON.parse(localStorage.getItem('skills'));
+    console.log('Cargando habilidades guardadas:', skills);
+    renderSkills();
+  } else {
+    console.log('No hay habilidades guardadas');
+  }
+
+  if (localStorage.getItem('languages')) {
+    languages = JSON.parse(localStorage.getItem('languages'));
+    console.log('Cargando lenguajes guardados:', languages);
+    renderLanguages();
+  } else {
+    console.log('No hay lenguajes guardados');
+  }
+
+  // Cargar algunos campos específicos
+  ['pageSize', 'pageOrientation', 'pageMargins', 'fontCombination', 'age', 'idDocument'].forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+      const savedValue = localStorage.getItem(id);
+      console.log(`Revisando el campo ${id}: valor guardado = ${savedValue}`);
+      if (savedValue) {
+        element.value = savedValue;
+        console.log(`Cargando valor guardado en ${id}: ${savedValue}`);
+      }
+
+      element.addEventListener('change', function () {
+        console.log(`Campo cambiado: ${this.id} = ${this.value}`);
+        saveToLocalStorage(this.id, this.value);
+      });
+    } else {
+      console.log(`El campo con id ${id} no existe en el DOM`);
+    }
+  });
+});
+
+    document.getElementById('photo').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          const preview = document.getElementById('photoPreview');
+          preview.innerHTML = '';
+          preview.appendChild(img);
+          saveToLocalStorage('photo', e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('clearPhoto').addEventListener('click', function() {
+      document.getElementById('photo').value = '';
+      document.getElementById('photoPreview').innerHTML = '';
+      localStorage.removeItem('photo');
+      showNotification('Fotografía eliminada');
+    });
+
+    function clearForm() {
+      if (confirm('¿Estás seguro de que quieres limpiar todo el formulario? Esta acción no se puede deshacer.')) {
+        document.querySelectorAll('input:not([type="file"]), textarea, select').forEach(element => {
+          element.value = '';
+          localStorage.removeItem(element.id || element.name);
+        });
+        document.getElementById('photoPreview').innerHTML = '';
+        localStorage.removeItem('photo');
+        experiences = [];
+        educations = [];
+        skills = [];
+        languages = [];
+        localStorage.removeItem('experiences');
+        localStorage.removeItem('educations');
+        localStorage.removeItem('skills');
+        localStorage.removeItem('languages');
+        renderExperiences();
+        renderEducations();
+        renderSkills();
+        renderLanguages();
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+          checkbox.checked = false;
+          localStorage.removeItem(checkbox.id);
+        });
+        showNotification('Formulario limpiado exitosamente');
+      }
+    }
+
+    function addExperience() {
+      const container = document.getElementById('experienceContainer');
+      const index = experiences.length;
+      const experienceHtml = `
+        <div class="experience">
+          <input type="text" placeholder="Cargo" name="jobTitle${index}" required>
+          <input type="text" placeholder="Empresa" name="company${index}" required>
+          <input type="text" placeholder="Fecha Inicio" name="startDate${index}" required>
+          <input type="text" placeholder="Fecha Fin" name="endDate${index}">
+          <textarea placeholder="Responsabilidades" name="responsibilities${index}" rows="3" required></textarea>
+
+          <button type="button" onclick="removeExperience(${index})"><i class="fas fa-trash icon-margin"></i> Eliminar</button>
+       </div>
+      `;
+      container.insertAdjacentHTML('beforeend', experienceHtml);
+      experiences.push({});
+      saveToLocalStorage('experiences', JSON.stringify(experiences));
+      addExperienceListeners(index);
+    }
+
+function addExperienceListeners(index) {
+  ['jobTitle', 'company', 'startYear', 'endYear'].forEach(field => {
+    const element = document.getElementsByName(`${field}${index}`)[0];
+
+    // Comprobar si el elemento existe antes de agregar el event listener
+    if (element) {
+      element.addEventListener('change', function() {
+        experiences[index][field] = this.value;
+        saveToLocalStorage('experiences', JSON.stringify(experiences));
+      });
+      console.log(`Listener agregado para ${field}${index}`);
+    } else {
+      console.error(`Elemento no encontrado: ${field}${index}`);
+    }
+  });
+
+  const pageBreakElement = document.getElementById(`pageBreakExperience${index}`);
+
+  // Comprobar si el elemento existe antes de agregar el event listener
+  if (pageBreakElement) {
+    pageBreakElement.addEventListener('change', function() {
+      experiences[index].pageBreak = this.checked;
+      saveToLocalStorage('experiences', JSON.stringify(experiences));
+    });
+    console.log(`Listener agregado para pageBreakExperience${index}`);
+  } else {
+    console.error(`Elemento no encontrado: pageBreakExperience${index}`);
+  }
+}
+
+
+function removeExperience(index) {
+  // Mostrar alerta de confirmación
+  const confirmDelete = confirm("¿Estás seguro de que deseas eliminar esta experiencia?");
+  
+  // Si el usuario confirma, proceder con la eliminación
+  if (confirmDelete) {
+    experiences.splice(index, 1); // Eliminar la experiencia
+    renderExperiences(); // Renderizar la lista actualizada
+    saveToLocalStorage('experiences', JSON.stringify(experiences)); // Guardar cambios en el almacenamiento local
+  }
+}
+
+       
+    function renderExperiences() {
+      const container = document.getElementById('experienceContainer');
+      container.innerHTML = '';
+      experiences.forEach((exp, index) => {
+        const experienceHtml = `
+          <div class="experience">
+            <input type="text" placeholder="Cargo" name="jobTitle${index}" value="${exp.jobTitle || ''}" required>
+            <input type="text" placeholder="Empresa" name="company${index}" value="${exp.company || ''}" required>
+            <input type="text" placeholder="Fecha Inicio" name="startDate${index}" value="${exp.startDate || ''}" required>
+            <input type="text" placeholder="Fecha Fin" name="endDate${index}" value="${exp.endDate || ''}">
+            <textarea placeholder="Responsabilidades" name="responsibilities${index}" rows="3" required>${exp.responsibilities || ''}</textarea>
+     
+            <button type="button" onclick="removeExperience(${index})">Eliminar<i class="fas fa-trash icon-margin"></i></button>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', experienceHtml);
+        addExperienceListeners(index);
+      });
+    }
+
+    function addEducation() {
+      const container = document.getElementById('educationContainer');
+      const index = educations.length;
+      const educationHtml = `
+        <div class="education">
+          <input type="text" placeholder="Título" name="degree${index}" required>
+          <input type="text" placeholder="Institución" name="institution${index}" required>
+          <input type="text" placeholder="Año de Graduación" name="graduationYear${index}" required>
+
+          <button type="button" onclick="removeEducation(${index})">Eliminar<i class="fas fa-trash icon-margin"></i></button>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', educationHtml);
+      educations.push({});
+      saveToLocalStorage('educations', JSON.stringify(educations));
+      addEducationListeners(index);
+    }
+
+function removeEducation(index) {
+  // Mostrar alerta de confirmación
+  const confirmDelete = confirm("¿Estás seguro de que deseas eliminar esta educación?");
+  
+  // Si el usuario confirma, proceder con la eliminación
+  if (confirmDelete) {
+    educations.splice(index, 1); // Eliminar la educación
+    renderEducations(); // Renderizar la lista actualizada
+    saveToLocalStorage('educations', JSON.stringify(educations)); // Guardar cambios en el almacenamiento local
+  }
+}
+
+       
+       
+function addEducationListeners(index) {
+  ['degree', 'institution', 'graduationYear'].forEach(field => {
+    const element = document.getElementsByName(`${field}${index}`)[0];
+
+    // Comprobar si el elemento existe antes de agregar el event listener
+    if (element) {
+      element.addEventListener('change', function() {
+        educations[index][field] = this.value;
+        saveToLocalStorage('educations', JSON.stringify(educations));
+      });
+      console.log(`Listener agregado para ${field}${index}`);
+    } else {
+      console.error(`Elemento no encontrado: ${field}${index}`);
+    }
+  });
+
+  const pageBreakElement = document.getElementById(`pageBreakEducation${index}`);
+  
+  // Comprobar si el elemento existe antes de agregar el event listener
+  if (pageBreakElement) {
+    pageBreakElement.addEventListener('change', function() {
+      educations[index].pageBreak = this.checked;
+      saveToLocalStorage('educations', JSON.stringify(educations));
+    });
+    console.log(`Listener agregado para pageBreakEducation${index}`);
+  } else {
+    console.error(`Elemento no encontrado: pageBreakEducation${index}`);
+  }
+}
+
+
+    function renderEducations() {
+      const container = document.getElementById('educationContainer');
+      container.innerHTML = '';
+      educations.forEach((edu, index) => {
+        const educationHtml = `
+          <div class="education">
+            <input type="text" placeholder="Título" name="degree${index}" value="${edu.degree || ''}" required>
+            <input type="text" placeholder="Institución" name="institution${index}" value="${edu.institution || ''}" required>
+            <input type="text" placeholder="Año de Graduación" name="graduationYear${index}" value="${edu.graduationYear || ''}" required>
+
+            <button type="button" onclick="removeEducation(${index})">Eliminar<i class="fas fa-trash icon-margin"></i></button>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', educationHtml);
+        addEducationListeners(index);
+      });
+    }
+
+    function addSkill() {
+      const skillInput = document.getElementById('skillInput');
+      const skill = skillInput.value.trim();
+      if (skill && !skills.includes(skill)) {
+        skills.push(skill);
+        renderSkills();
+        skillInput.value = '';
+        saveToLocalStorage('skills', JSON.stringify(skills));
+      }
+    }
+
+    function removeSkill(skill) {
+      const index = skills.indexOf(skill);
+      if (index > -1) {
+        skills.splice(index, 1);
+        renderSkills();
+        saveToLocalStorage('skills', JSON.stringify(skills));
+      }
+    }
+
+    function renderSkills() {
+      const container = document.getElementById('skillContainer');
+      container.innerHTML = skills.map(skill => `
+        <div class="skill-item">
+          ${skill}
+          <button class="remove-btn" onclick="removeSkill('${skill}')">×</button>
+        </div>
+      `).join('');
+    }
+
+    function addLanguage() {
+      const languageInput = document.getElementById('languageInput');
+      const languageLevel = document.getElementById('languageLevel');
+      const language = languageInput.value.trim();
+      const level = languageLevel.value;
+      if (language) {
+        languages.push({ language, level });
+        renderLanguages();
+        languageInput.value = '';
+        saveToLocalStorage('languages', JSON.stringify(languages));
+      }
+    }
+
+    function removeLanguage(index) {
+      languages.splice(index, 1);
+      renderLanguages();
+      saveToLocalStorage('languages', JSON.stringify(languages));
+    }
+
+    function renderLanguages() {
+      const container = document.getElementById('languageContainer');
+      container.innerHTML = languages.map((lang, index) => `
+        <div class="language-item">
+          ${lang.language} - ${lang.level}
+          <button class="remove-btn" onclick="removeLanguage(${index})">×</button>
+        </div>
+      `).join('');
+    }
+
+    function generateJSONData() {
+      return {
+        fullName: document.getElementById('fullName').value,
+        photo: localStorage.getItem('photo'),
+        jobTitle: document.getElementById('jobTitle').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        linkedIn: document.getElementById('linkedIn').value,
+        summary: document.getElementById('summary').value,
+        age: document.getElementById('age').value,
+        idDocument: document.getElementById('idDocument').value,
+        experiences: experiences,
+        educations: educations,
+        skills: skills,
+        personalSkills: document.getElementById('personalSkills').value,
+        languages: languages,
+        certifications: document.getElementById('certifications').value,
+        references: document.getElementById('references').value,
+      };
+    }
+
+    function shareViaWhatsApp() {
+      const jsonData = generateJSONData();
+      const encodedData = encodeURIComponent(JSON.stringify(jsonData));
+      const whatsappUrl = `https://wa.me/?text=${encodedData}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+//----------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input:not([type="file"]), textarea, select').forEach(element => {
+    const key = element.id || element.name;
+    const savedValue = localStorage.getItem(key);
+    console.log(`Cargando ${key}:`, savedValue);
+    
+    if (savedValue) {
+      element.value = savedValue;
+    }
+    
+    element.addEventListener('change', function() {
+      const key = this.id || this.name;
+      console.log(`Guardando ${key}:`, this.value);
+      saveToLocalStorage(key, this.value);
+    });
+  });
+});
+
+//---------------------------------------------------------
+
+
+       // Obtén el modal, el botón y el elemento para cerrar
+        var modal = document.getElementById("confidentialityModal");
+        var btn = document.getElementById("confidentialityBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Mostrar el modal cuando se haga clic en el botón
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Ocultar el modal cuando se haga clic en el elemento de cierre (X)
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Ocultar el modal cuando se haga clic fuera de él
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+//---------------------------------------------------------------
+
+document.getElementById('share-email-btn').addEventListener('click', function() {
+  shareViaEmail();
+});
+
+function shareViaEmail() {
+  const jsonData = generateJSONData(); // Usa tu función para generar los datos JSON
+  const encodedData = encodeURIComponent(JSON.stringify(jsonData));
+  const subject = encodeURIComponent("Datos Compartidos");
+  const body = `Datos para creacion de Currículum  :\n\n${encodedData}`;
+  const recipient = "idesign@live.com";  // Tu dirección de correo
+  const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  
+  window.open(mailtoUrl, '_blank');
+}
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
